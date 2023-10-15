@@ -1,0 +1,122 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2023-10-15T00:57:46.513015+00:00",
+  "repo": "cats-wg/draft-ietf-cats-usecases-requirements",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOKfPAms5cnqa2",
+      "title": "Add use case of Computing-Aware AI large model",
+      "url": "https://github.com/cats-wg/draft-ietf-cats-usecases-requirements/pull/1",
+      "state": "OPEN",
+      "author": "QingAn",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Add use case of Computing-Aware AI large model, based on the discussion during IETF 117.",
+      "createdAt": "2023-10-12T10:49:21Z",
+      "updatedAt": "2023-10-13T03:33:10Z",
+      "baseRepository": "cats-wg/draft-ietf-cats-usecases-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "17811e95cd6e130e93ad3bd4daf553721947696f",
+      "headRepository": "QingAn/draft-ietf-cats-usecases-requirements",
+      "headRefName": "patch-1",
+      "headRefOid": "2a8abf6dd9ee921e89082d14100a9e47cf77ab1f",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfPAms5jxelk",
+          "commit": {
+            "abbreviatedOid": "ae4403b"
+          },
+          "author": "VMatrix1900",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-12T11:23:58Z",
+          "updatedAt": "2023-10-12T11:23:58Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "What is the relation between digial twin and AI large model?",
+              "createdAt": "2023-10-12T11:23:58Z",
+              "updatedAt": "2023-10-12T11:23:58Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfPAms5j4CRB",
+          "commit": {
+            "abbreviatedOid": "ae4403b"
+          },
+          "author": "QingAn",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-13T03:31:09Z",
+          "updatedAt": "2023-10-13T03:31:10Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "Sorry, typo. I copied the digital twin first paragraph to follow the format. Forgot to delete",
+              "createdAt": "2023-10-13T03:31:10Z",
+              "updatedAt": "2023-10-13T03:31:10Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
