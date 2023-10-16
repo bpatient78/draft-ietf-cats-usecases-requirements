@@ -164,23 +164,22 @@ informative:
    to the most suitable computing resource in order to meet the users'
    service demand.
 
-   Depending on the locations of computing resource and their capacity,
-   different amounts of resource from different locations can be used to
-   deliver a service.  At peak hours, computing resources closest to a
-   client might not be sufficient to handle all the incoming service
-   requests.  Longer response times or even dropping of requests could
-   be experienced by users.  Increasing the computing resources hosted
-   at each location to the potential maximum capacity is neither
-   feasible nor economically viable in many cases.  Offloading
-   computation intensive processing to the user devices would place huge
-   pressure on local resources such as the battery, and the needed data
-   set (for the computation) that may not exist on the user device
-   because of the size of data pool or due to data governance reasons.
-
-   Service providers often have their own server sites, many of which
+   Service providers often have their own service sites, many of which
    have been enhanced to support computing services.  A service instance
    deployed at a single site might not provide sufficient capacity to
    fully guarantee the quality of service required by a customer.
+   Especially at peak hours, computing resources at a single site can
+   not handle all the incoming service requests, leading to longer
+   response times or even dropping of requests experienced by clients.
+
+   Moreover, increasing the computing resources hosted at each location
+   to the potential maximum capacity is neither feasible nor
+   economically viable in many cases.  Offloading computation intensive
+   processing to the user devices is neither acceptable, since it would
+   place huge pressure on local resources such as the battery and incur
+   some data privacy issues if the needed data for computation is not
+   provided locally.
+
    Instead, the same service can be deployed at multiple sites for
    better availability and scalability.  Furthermore, it is desirable to
    balance the load across all service instances to improve throughput.
@@ -188,16 +187,6 @@ informative:
    according to information that may include current computing load,
    where the notion of 'best' may highly depend on the application
    demands.
-
-   A particular example is the popular and pervasive 5G Mobile Edge
-   Computing(MEC) service.  In 5G MEC, the Uplink Classifier(UL-CL)
-   functionality of User Plane Functions(UPFs) are deployed close to
-   edge sites, which are capable of effectively classifying & switching
-   uplink traffic to the suitable computing-resources that might be
-   located either in local-area Data Network(DN), operators' DN, or even
-   3rd-party's DN.  Through possibly using some 'intelligent' criteria,
-   this could warrant the selection of resources with either low, high-
-   computational power or all-involved requirements.
 
    This document describes sample usage scenarios that drive CATS
    requirements and will help to identify candidate solution
@@ -213,23 +202,74 @@ informative:
 
    This document makes use of the following terms:
 
-   Service:
-   :  An offering provided by a service provider, similar to the
-     notion of a 'service function' in {{?RFC7665}}, which may or may not
-     be of composite nature but appears in the problem space of CATS as
-     a single service to which traffic needs to be steered.
+   Client:
+     An endpoint that is connected to a service provider network.
 
-   Service instance:
-   :  A run-time environment (e.g., a server or a
-     process on a server) that makes a service available.  A particular
-     service could be made available at multiple service instances at
-     the same or different locations.
+   Computing-Aware Traffic Steering (CATS):  A traffic engineering
+     approach [I-D.ietf-teas-rfc3272bis] that takes into account the
+     dynamic nature of computing resources and network state to optimize
+     service-specific traffic forwarding towards a given service contact
+     instance.  Various relevant metrics may be used to enforce such
+     computing-aware traffic steering policies.
+     
+   Service:  An offering that is made available by a provider by
+     orchestrating a set of resources (networking, compute, storage,
+     etc.).  Which and how these resources are solicited is part of the
+     service logic which is internal to the provider.  For example,
+     these resources may be:
+     
+        * Exposed by one or multiple processes (a.k.a.  Service
+        Functions (SFs) ).  [RFC7665]
+
+        * Provided by virtual instances, physical, or a combination
+        thereof.
+
+        * Hosted within the same or distinct nodes.
+
+        * Hosted within the same or multiple service sites.
+
+        * Chained to provide a service using a variety of means.
+
+        How a service is structured is out of the scope of CATS.
+ 
+        The same service can be provided in many locations; each of them
+        constitutes a service instance.
 
    Service identifier:
-   :  Used to uniquely identify a service, at the same
-     time identifying the whole set of service instances that each
-     represent the same service behavior, no matter where those service
-     instances are running.
+     An identifier representing a service, which the clients use to
+     access it.
+
+   Computing Service:
+     An offering that is made available by a provider by orchestrating a
+     set of computing resources (without networking resources).
+
+   Service instance:
+     An instance of running resources according to a given service
+     logic.  Many such instances can be enabled by a provider.
+     Instances that adhere to the same service logic provide the same
+     service.  An instance is typically running in a service site.
+     Clients' requests are serviced by one of these instances.  
+
+   Service site:
+     A location that hosts the resources that are required to offer a
+     service.  A service site may be a node or a set of nodes.  A CATS-
+     serviced site is a service site that is connected to a CATS-
+     Forwarder.
+
+   Network Edge:
+     The network edge is an architectural demarcation point used to
+     identify physical locations where the corporate network connects to
+     third-party networks.
+
+   Edge Computing:  
+     Edge computing is a computing pattern that moves
+     computing infrastructures, i.e, servers, away from centralized data
+     centers and instead places it close to the end users for low
+     latency communication.
+
+     * Relations with network edge: edge computing infrastructures
+     connect to corporate network through a network edge entry/exit
+     point.
 
 #  Problem Statement
 
